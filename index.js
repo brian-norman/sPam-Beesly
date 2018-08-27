@@ -1,3 +1,5 @@
+const { prefix } = require('./config.json');
+
 // require the discord.js module
 const Discord = require('discord.js');
 
@@ -20,11 +22,10 @@ client.on('ready', () => {
 client.login(process.env.TOKEN);
 
 client.on('message', message => {
-	// Whenever a message is sent in a channel with sPam in it she logs the message
-    // console.log(message.content);
-
-    if (message.content === 'ping') {
-    // send back "Pong." to the channel the message was sent in
-    message.channel.send('Pong.');
-}
+	if (message.content.startsWith(`${prefix}ping`)) {
+    	message.channel.send('Pong.');
+	}
+	else if (message.content.startsWith(`${prefix}beep`)) {
+	    message.channel.send('Boop.');
+	}
 });
