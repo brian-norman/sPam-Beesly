@@ -28,4 +28,13 @@ client.on('message', message => {
 	else if (message.content.startsWith(`${prefix}beep`)) {
 	    message.channel.send('Boop.');
 	}
+	else if (message.content.startsWith(`${prefix}server`)) {
+		message.channel.send(`This server's name is: ${message.guild.name} 
+			\n Total members: ${message.guild.memberCount}
+			\n This server was created at: ${message.guild.createdAt}`);
+	}
+	else if (message.content.startsWith(`${prefix}user-info`)) {
+		message.channel.send(`Your username: ${message.author.username}`);
+	}
+
 });
