@@ -1,0 +1,19 @@
+{
+  "name": "spam-beesly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sokasuki/sPam-Beesly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sokasuki/sPam-Beesly/issues"
+  },
+  "homepage": "https://github.com/sokasuki/sPam-Beesly#readme"
+}
