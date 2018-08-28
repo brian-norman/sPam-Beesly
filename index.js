@@ -22,7 +22,7 @@ client.on('ready', () => {
 
 client.login(process.env.TOKEN);
 
-client.on('message', message => {
+client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);
