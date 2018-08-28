@@ -10,5 +10,5 @@ module.exports = {
         	return `${user.username}'s avatar: ${user.displayAvatarURL}`;
     	});
 	    message.channel.send(avatarList);
-	}
-}
+	},
+};

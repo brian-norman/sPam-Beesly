@@ -5,5 +5,5 @@ module.exports = {
 	usage: '<user> <role>',
 	execute(message, args) {
 		return message.reply(`This command doesn't do anything yet... sorry!`);
-	}
-}
+	},
+};

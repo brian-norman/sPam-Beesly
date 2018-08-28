@@ -11,5 +11,5 @@ module.exports = {
     	}
     	const taggedUser = message.mentions.users.first();
 		message.channel.send(`You want to kick: ${taggedUser}`);
-	}
-}
+	},
+};

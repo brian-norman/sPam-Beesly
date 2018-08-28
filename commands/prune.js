@@ -20,5 +20,5 @@ module.exports = {
 	    		message.reply('There was an error trying to prune messages in this channel!');
     		}
 		});	
-	}
-}
+	},
+};
