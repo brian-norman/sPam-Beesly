@@ -1,4 +1,4 @@
-<p align="center"> <src="sPam.jpg"> </p>
+![image](sPam.jpg)
 
 # sPam-Beesly
 
