@@ -26,12 +26,18 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
+	const commandName = args.shift().toLowerCase();
 
-	if (!client.commands.has(command)) return;
+	if (!client.commands.has(commandName)) return;
 
+	const command = client.commands.get(commandName);
+
+	// Set args to true in the command.js if you want this check to run
+	if (command.args && !args.length) {
+		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+	}
 	try {
-    	client.commands.get(command).execute(message, args);
+    	command.execute(message, args);
 	}
 	catch (error) {
     	console.error(error);
