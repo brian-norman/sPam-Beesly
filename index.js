@@ -34,7 +34,13 @@ client.on('message', message => {
 
 	// Set args to true in the command.js if you want this check to run
 	if (command.args && !args.length) {
-		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+		let reply = `You didn't provide any arguments, ${message.author}!`;
+
+		if (command.usage) {
+			reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+		}
+
+		return message.channel.send(reply);
 	}
 	try {
     	command.execute(message, args);
