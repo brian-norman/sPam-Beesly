@@ -4,6 +4,7 @@ module.exports = {
 	name: 'git',
 	description: 'Github commands',
 	aliases: ['github'],
+	usage: '<zen> or <user> <username>',
 	args: true,
 	async execute(message, args) {
 		if (args[0] == 'zen') {
