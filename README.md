@@ -11,4 +11,4 @@ By typing ```!help ``` you will get a DM of all the possible commands this bot h
 By typing ```!help <command>``` followed by a command you can learn more about that command.
 
 ## GitHub Specific Commands
-By typing ```!git user <username>``` the bot will message the channel that user's bio.
+By typing ```!git user <username>``` the bot will message the channel that user's bio, followed by a link to their page.
