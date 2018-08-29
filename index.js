@@ -2,6 +2,8 @@ const fs = require('fs');
 const { prefix } = require('./config.json');
 const Discord = require('discord.js');
 require('dotenv').config();
+const express = require('express');
+var app = express();
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -55,4 +57,8 @@ client.on('message', async message => {
     	console.error(error);
     	message.reply('There was an error trying to execute that command!');
 	}
+});
+
+app.listen(process.env.PORT || 3000 ,function(){
+    console.log("up and running on port "+process.env.PORT);
 });
