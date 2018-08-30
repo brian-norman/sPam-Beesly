@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sokasuki/sPam-Beesly.svg?branch=master)](https://travis-ci.org/sokasuki/sPam-Beesly)
+
 ![image](sPam.jpg)
 
 # sPam-Beesly
