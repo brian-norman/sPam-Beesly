@@ -25,37 +25,39 @@ client.on('ready', () => {
 client.login(process.env.TOKEN);
 
 client.on('message', async message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const commandName = args.shift().toLowerCase();
-
-	const command = client.commands.get(commandName) 
-		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-
-	if (!command) return;
-
-	// Set guildOnly to true if you don't want this command to work in DMs
-	if (command.guildOnly && message.channel.type !== 'text') {
-    	return message.reply('I can\'t execute that command inside DMs!');
+	if (!message.content.startsWith(prefix) || message.author.bot) {
+		return;
 	}
+	else {
+		const args = message.content.slice(prefix.length).split(/ +/);
+		const commandName = args.shift().toLowerCase();
 
-	// Set args to true in the command.js if you want this check to run
-	if (command.args && !args.length) {
-		let reply = `You didn't provide any arguments, ${message.author}!`;
+		const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-		if (command.usage) {
-			reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+		if (!command) return;
+
+		// Set guildOnly to true if you don't want this command to work in DMs
+		if (command.guildOnly && message.channel.type !== 'text') {
+	    	return message.reply('I can\'t execute that command inside DMs!');
 		}
 
-		return message.channel.send(reply);
-	}
-	try {
-    	command.execute(message, args);
-	}
-	catch (error) {
-    	console.error(error);
-    	message.reply('There was an error trying to execute that command!');
+		// Set args to true in the command.js if you want this check to run
+		if (command.args && !args.length) {
+			let reply = `You didn't provide any arguments, ${message.author}!`;
+
+			if (command.usage) {
+				reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+			}
+
+			return message.channel.send(reply);
+		}
+		try {
+	    	command.execute(message, args);
+		}
+		catch (error) {
+	    	console.error(error);
+	    	message.reply('There was an error trying to execute that command!');
+		}
 	}
 });
 
