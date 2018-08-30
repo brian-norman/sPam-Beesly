@@ -16,3 +16,8 @@ By typing ```!help <command>``` followed by a command you can learn more about t
 By typing ```!git user <username>``` the bot will message the channel that user's bio, followed by a link to their page.
 
 By typing ```!git issues <user> <repo>``` the bot will message the channel that repo's issues. 
+
+By typing ```!git repo <user> <repo>``` the bot will message the channel that repo's link. 
+
+By typing ```!git repo <user>``` the bot will message the channel a list of repos belonging to that user. 
+
