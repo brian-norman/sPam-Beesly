@@ -30,5 +30,9 @@ module.exports = {
 				message.channel.send(`Issue ${i+1}: ${body[i].title} - ${body[i].body}`);
 			}
 		}
+		else if (args[0] == 'repo') {
+			const { body } = await snekfetch.get(`https://api.github.com/repos/${args[1]}/${args[2]}`);
+			message.channel.send(`Link to ${args[2]}: ${body.url}`)
+		}
 	},
 };
