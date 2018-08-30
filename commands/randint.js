@@ -6,9 +6,7 @@ module.exports = {
 	usage: '<lower> <upper>',
 	args: true,
 	execute(message, args) {
-		Console.log('A ting');
-
-		const int = randomInt(args[0], args[1]);
+		const int = randomInt(parseInt(args[0]), parseInt(args[1]));
 		message.channel.send(`The number is: ${int}`);
 	},
 };
