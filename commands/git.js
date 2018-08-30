@@ -32,7 +32,7 @@ module.exports = {
 		}
 		else if (args[0] == 'repo') {
 			const { body } = await snekfetch.get(`https://api.github.com/repos/${args[1]}/${args[2]}`);
-			message.channel.send(`Link to ${args[2]}: ${body.url}`)
+			message.channel.send(`Link to ${args[2]}: ${body.html_ur}`)
 		}
 	},
 };
