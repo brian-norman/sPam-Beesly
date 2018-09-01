@@ -21,3 +21,5 @@ By typing ```!git repo <user> <repo>``` the bot will message the channel that re
 
 By typing ```!git repo <user>``` the bot will message the channel a list of repos belonging to that user. 
 
+## Build-Your-Own-X Integration
+By typing ```!project``` the bot will pick a random project to work on from [this wonderful repo](https://github.com/danistefanovic/build-your-own-x).
