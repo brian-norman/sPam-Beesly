@@ -23,6 +23,7 @@
     "eslint": "^5.4.0",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
+    "markdown": "^0.5.0",
     "random-int": "^1.0.0",
     "snekfetch": "^4.0.4",
     "socket.io": "^2.1.1"
