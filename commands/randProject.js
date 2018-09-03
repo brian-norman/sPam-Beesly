@@ -1,6 +1,5 @@
 const snekfetch = require('snekfetch');
 var randomInt = require('random-int');
-const markdown = require( "markdown" ).markdown;
 
 module.exports = {
 	name: 'randProject',
