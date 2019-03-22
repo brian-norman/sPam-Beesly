@@ -2,7 +2,7 @@ const snekfetch = require('snekfetch');
 var randomInt = require('random-int');
 
 module.exports = {
-	name: 'randProject',
+	name: 'project',
 	description: 'Picks a random project to work on',
 	aliases: [`project`],
 	async execute(message, args) {
