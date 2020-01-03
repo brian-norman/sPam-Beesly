@@ -24,5 +24,7 @@ By typing ```!project``` the bot will pick a random project to work on from [thi
 
 ## Discord Specific Commands
 By typing ```!avatar @user``` the bot will message the channel the tagged user's profile picture.
+
 By typing ```!kick @user``` the bot will attempt to kick the tagged user (if it has permissions).
+
 By typing ```!prune <number of messages to delete>``` the bot will remove the last x number of messages from the channel if it has permissions.
