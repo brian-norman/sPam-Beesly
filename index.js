@@ -22,7 +22,7 @@ client.on('ready', () => {
     console.log('Ready!');
 });
 
-client.login(process.env.TOKEN);
+client.login(process.env.DISCORD_TOKEN);
 
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) {

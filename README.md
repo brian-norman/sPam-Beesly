@@ -21,3 +21,8 @@ By typing ```!git repo <user>``` the bot will message the channel a list of repo
 
 ## Build-Your-Own-X Integration
 By typing ```!project``` the bot will pick a random project to work on from [this wonderful repo](https://github.com/danistefanovic/build-your-own-x).
+
+## Discord Specific Commands
+By typing ```!avatar @user``` the bot will message the channel the tagged user's profile picture.
+By typing ```!kick @user``` the bot will attempt to kick the tagged user (if it has permissions).
+By typing ```!prune <number of messages to delete>``` the bot will remove the last x number of messages from the channel if it has permissions.
