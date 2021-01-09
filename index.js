@@ -22,7 +22,7 @@ client.on('ready', () => {
 	console.log('Ready!');
 });
 
-client.login('NDgzNzM0NDE1OTQwMzg2ODM2.DmYAvQ.As3IiE05PiljgP_Skjojvydi5r8');
+client.login(process.env.DISCORD_TOKEN);
 
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) {
