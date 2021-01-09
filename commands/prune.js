@@ -12,13 +12,13 @@ module.exports = {
 			return message.reply('you need to input a number between 2 and 100.');
 		}
 		message.channel.bulkDelete(amount, true).catch(err => {
-    		console.error(err);
-    		if (err.message === 'Missing Permissions') {
-    			message.reply(`I don't have permission to do that in here!`);
-    		}
-    		else {
-	    		message.reply('There was an error trying to prune messages in this channel!');
-    		}
-		});	
+			console.error(err);
+			if (err.message === 'Missing Permissions') {
+				message.reply('I don\'t have permission to do that in here!');
+			}
+			else {
+				message.reply('There was an error trying to prune messages in this channel!');
+			}
+		});
 	},
 };

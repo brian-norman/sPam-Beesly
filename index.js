@@ -3,7 +3,7 @@ const { prefix } = require('./config.json');
 const Discord = require('discord.js');
 require('dotenv').config();
 const express = require('express');
-var app = express();
+const app = express();
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -11,18 +11,18 @@ client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
+	const command = require(`./commands/${file}`);
 
-    // set a new item in the Collection
-    // with the key as the command name and the value as the exported module
-    client.commands.set(command.name, command);
+	// set a new item in the Collection
+	// with the key as the command name and the value as the exported module
+	client.commands.set(command.name, command);
 }
 
 client.on('ready', () => {
-    console.log('Ready!');
+	console.log('Ready!');
 });
 
-client.login(process.env.DISCORD_TOKEN);
+client.login('NDgzNzM0NDE1OTQwMzg2ODM2.DmYAvQ.As3IiE05PiljgP_Skjojvydi5r8');
 
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) {
@@ -38,7 +38,7 @@ client.on('message', async message => {
 
 		// Set guildOnly to true if you don't want this command to work in DMs
 		if (command.guildOnly && message.channel.type !== 'text') {
-	    	return message.reply('I can\'t execute that command inside DMs!');
+			return message.reply('I can\'t execute that command inside DMs!');
 		}
 
 		// Set args to true in the command.js if you want this check to run
@@ -52,21 +52,27 @@ client.on('message', async message => {
 			return message.channel.send(reply);
 		}
 		try {
-	    	command.execute(message, args);
+			if (commandName === 'rant') {
+				command.execute(message, args, client);
+			}
+			else {
+				command.execute(message, args);
+			}
 		}
 		catch (error) {
-	    	console.error(error);
-	    	message.reply('There was an error trying to execute that command!');
+			console.error(error);
+			message.reply('There was an error trying to execute that command!');
 		}
 	}
 });
 
-app.listen(process.env.PORT || 3000 ,function(){
-    console.log("up and running on port "+process.env.PORT);
+app.listen(process.env.PORT || 3000, function() {
+	console.log('up and running on port ' + process.env.PORT);
 });
 
 // To wake up heroku every 5 minutes
-var http = require("http");
+const http = require('http');
 setInterval(function() {
-    http.get("http://spam-beesly.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
+	http.get('http://spam-beesly.herokuapp.com');
+}, 300000);
+// every 5 minutes (300000)
